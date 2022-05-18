@@ -76,7 +76,7 @@ const booleanStore = useBooleanStore();
   width: var(--width);
   transition: 1s ease-in-out background-color;
   background-color: var(--secondary-color);
-  border-radius: 50%;
+  border-radius: 49%;
   cursor: pointer;
 }
 .hamRotate.active {
