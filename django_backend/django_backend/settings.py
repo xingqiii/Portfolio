@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'back_end',
     'rest_framework_simplejwt.token_blacklist',
+    'rest_framework_simplejwt',
 ]
 
 MIDDLEWARE = [
@@ -55,11 +56,10 @@ MIDDLEWARE = [
 ]
 
 CORS_ORIGIN_WHITELIST = (
-    'http://localhost:8000',
-    'http://127.0.0.1:8000',
+    'http://localhost:3000',
+    'http://127.0.0.1:3000',
 )
 
-CORS_ORIGIN_ALLOW_ALL = True
 
 ROOT_URLCONF = 'django_backend.urls'
 
@@ -67,7 +67,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            str(BASE_DIR.joinpath('templates'))
+            # str(BASE_DIR.joinpath('templates'))
         ],
         'APP_DIRS': True,
         'OPTIONS': {
