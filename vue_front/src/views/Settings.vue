@@ -1,24 +1,42 @@
 <template>
   <div class="settings-outer">
-    <div class="settings-inner">Nothing here yet</div>
+    <div class="settings-left">
+      <button>Auth</button>
+      <button>Others</button>
+    </div>
+    <TheSeparatorVue class="separator" />
+    <div class="settings-right">Hello</div>
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import TheSeparatorVue from "../components/TheSeparator.vue";
+</script>
 
-<style>
+<style lang="scss" scoped>
 .settings-outer {
+  z-index: 100;
   position: absolute;
-  bottom: 0;
-  right: 0;
+  left: 0;
+  top: 0;
   height: 100%;
   width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
-  text-align: center;
 }
-.settings-inner {
-  font-size: 200px;
+
+.settings-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.separator {
+  --width: 2px;
+  --height: 500px;
+  --back-color: blue;
+}
+
+.settings-right {
+  width: 500px;
 }
 </style>

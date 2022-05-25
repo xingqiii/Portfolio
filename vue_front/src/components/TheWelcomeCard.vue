@@ -70,6 +70,9 @@ import TheSeparatorVue from "./TheSeparator.vue";
 }
 
 .sepa {
+  margin-left: calc(50% - var(--width) / 2);
   --width: 20%;
+  --height: 3px;
+  --back-color: blue;
 }
 </style>
