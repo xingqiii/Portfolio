@@ -1,7 +1,13 @@
 <template>
   <div class="outer-login">
-    <div class="left"></div>
-    <div class="right"></div>
+    <div class="form">
+      <h1>Sign In</h1>
+      <form class="login-form">
+        <input type="text" placeholder="username" />
+        <input type="password" placeholder="password" />
+        <button>login</button>
+      </form>
+    </div>
   </div>
 </template>
 
@@ -9,8 +15,44 @@
 
 <style lang="scss" scoped>
 .outer-login {
-  width: 500px;
-  height: 600px;
-  background-color: blue;
+  padding: 0 0 10% 0;
+}
+.form {
+  height: 350px;
+  width: 400px;
+  position: relative;
+  z-index: 1;
+  padding: 0 0 10% 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  h1 {
+    transition: 1s ease-in-out color;
+    color: var(--heading-color);
+    padding-left: 2%;
+  }
+}
+.form input {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+.form button {
+  transition: 1s ease-in-out background-color;
+  background-color: var(--secondary-color);
+  text-transform: uppercase;
+  outline: 0;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
 }
 </style>

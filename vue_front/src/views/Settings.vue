@@ -2,23 +2,28 @@
   <div class="settings-outer">
     <div class="settings-left">
       <!-- If Logged Out -->
-      <button>SignIn</button>
-      <button>SignUp</button>
+      <button @click="signInClicked = !signInClicked">SignIn</button>
+      <button @click="signUpClicked = !signUpClicked">SignUp</button>
       <!-- If Logged In -->
       <button>SignOut</button>
       <button>Delete Account</button>
     </div>
     <TheSeparatorVue class="separator" />
-    <div class="settings-SignIn"><SignInVue /></div>
-    <!-- <div class="settings-SignUp">Hello</div>
-    <div class="settings-SignOut">Hello</div>
+    <div v-if="signInClicked" class="settings-SignIn"><SignInVue /></div>
+    <div v-if="signUpClicked" class="settings-SignUp"><SignUpVue /></div>
+    <!-- <div class="settings-SignOut">Hello</div>
     <div class="settings-Delete_Account">Hello</div> -->
   </div>
 </template>
 
 <script setup>
+import { ref } from "@vue/reactivity";
 import SignInVue from "@/components/Authentication/SignIn.vue";
+import SignUpVue from "../components/Authentication/SignUp.vue";
 import TheSeparatorVue from "../components/TheSeparator.vue";
+
+const signInClicked = ref(false);
+const signUpClicked = ref(false);
 </script>
 
 <style lang="scss" scoped>
@@ -53,7 +58,7 @@ import TheSeparatorVue from "../components/TheSeparator.vue";
 }
 
 .settings-SignIn {
-  width: 92%;
+  width: 88%;
   height: 100%;
   display: flex;
   justify-content: center;
