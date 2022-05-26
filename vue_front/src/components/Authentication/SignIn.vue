@@ -2,16 +2,42 @@
   <div class="outer-login">
     <div class="form">
       <h1>Sign In</h1>
-      <form class="login-form">
-        <input type="text" placeholder="username" />
-        <input type="password" placeholder="password" />
+      <form v-on:submit.prevent="login" class="login-form">
+        <input
+          type="text"
+          name="username"
+          id="user"
+          v-model="username"
+          placeholder="username"
+        />
+        <input
+          type="password"
+          name="password"
+          id="pass"
+          v-model="password"
+          placeholder="password"
+        />
         <button>login</button>
+        <!-- <p v-if="incorrectAuth">Incorrect Username or Password</p> -->
       </form>
     </div>
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import { useAuth } from "@/stores/auth";
+import { ref } from "@vue/reactivity";
+
+const Auth = useAuth();
+const username = ref("");
+const password = ref("");
+
+function login() {
+  /* Auth.userLogin(); */
+  Auth.username = username;
+  Auth.password = password;
+}
+</script>
 
 <style lang="scss" scoped>
 .outer-login {

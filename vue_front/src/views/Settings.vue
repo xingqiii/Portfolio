@@ -5,12 +5,12 @@
       <button @click="signInClicked = !signInClicked">SignIn</button>
       <button @click="signUpClicked = !signUpClicked">SignUp</button>
       <!-- If Logged In -->
-      <button>SignOut</button>
-      <button>Delete Account</button>
+      <!-- <button>SignOut</button>
+      <button>Delete Account</button> -->
     </div>
     <TheSeparatorVue class="separator" />
     <div v-if="signInClicked" class="settings-SignIn"><SignInVue /></div>
-    <div v-if="signUpClicked" class="settings-SignUp"><SignUpVue /></div>
+    <div v-if="signUpClicked" class="settings-SignIn"><SignUpVue /></div>
     <!-- <div class="settings-SignOut">Hello</div>
     <div class="settings-Delete_Account">Hello</div> -->
   </div>
