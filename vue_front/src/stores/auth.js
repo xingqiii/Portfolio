@@ -18,22 +18,18 @@ export const useAuth = defineStore("auth", {
     },
   },
   actions: {
-    userLogin(context, usercredentials) {
+    userLogin(usercredentials) {
       return new Promise((resolve, reject) => {
         getAPI
           .post("/api-token/", {
-            username: usercredentials.username,
-            password: usercredentials.password,
+            username: "sameul",
+            password: "H19710967",
           })
           .then((response) => {
-            context.commit("updateStorage", {
-              access: response.data.access,
-              refresh: response.data.refresh,
-            });
-            resolve();
+            console.log(response);
           })
           .catch((err) => {
-            reject("sdfserf");
+            reject(err);
           });
       });
     },
