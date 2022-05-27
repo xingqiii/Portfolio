@@ -7,14 +7,14 @@
           type="text"
           name="username"
           id="user"
-          v-model="username"
+          v-model="Auth.username"
           placeholder="username"
         />
         <input
           type="password"
           name="password"
           id="pass"
-          v-model="password"
+          v-model="Auth.password"
           placeholder="password"
         />
         <button>login</button>
@@ -29,13 +29,13 @@ import { useAuth } from "@/stores/auth";
 import { ref } from "@vue/reactivity";
 
 const Auth = useAuth();
-const username = ref("");
-const password = ref("");
+Auth.username = ref("");
+Auth.password = ref("");
 
 function login() {
-  /* Auth.userLogin(); */
-  Auth.username = username;
-  Auth.password = password;
+  console.log(Auth.username);
+  console.log(Auth.password);
+  Auth.userLogin(Auth.username, Auth.password);
 }
 </script>
 
