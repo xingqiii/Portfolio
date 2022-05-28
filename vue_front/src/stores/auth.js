@@ -12,18 +12,18 @@ export const useAuth = defineStore("auth", {
     APIData: "",
   }),
   mutations: {
-    updateStorage(state, { access, refresh }) {
+    updateStorage({ access, refresh }) {
       this.accessToken = access;
       this.refreshToken = refresh;
     },
   },
   actions: {
-    userLogin(usercredentials) {
+    userLogin() {
       return new Promise((resolve, reject) => {
         getAPI
           .post("/api-token/", {
-            username: "sameul",
-            password: "H19710967",
+            username: this.username,
+            password: this.password,
           })
           .then((response) => {
             console.log(response);

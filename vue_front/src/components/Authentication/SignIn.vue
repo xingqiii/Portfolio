@@ -35,7 +35,7 @@ Auth.password = ref("");
 function login() {
   console.log(Auth.username);
   console.log(Auth.password);
-  Auth.userLogin(Auth.username, Auth.password);
+  Auth.userLogin();
 }
 </script>
 
