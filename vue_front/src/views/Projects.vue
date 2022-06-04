@@ -1,6 +1,10 @@
 <template>
   <div class="projects-outer">
-    <div class="projects-inner">Nothing here yet</div>
+    <div class="projects-inner">
+      <ul>
+        <li>farm website</li>
+      </ul>
+    </div>
   </div>
 </template>
 
