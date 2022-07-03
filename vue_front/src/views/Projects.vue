@@ -2,7 +2,8 @@
   <div class="projects-outer">
     <div class="projects-inner">
       <ul>
-        <li>farm website</li>
+        <li>Farm</li>
+        <li>Data Science Site</li>
       </ul>
     </div>
   </div>
